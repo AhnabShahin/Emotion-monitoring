@@ -1,0 +1,27 @@
+conda install pyqt=5
+conda install -c anaconda lxml
+pyrcc5 -o libs/resources.py resources.qrc
+python labelImg.py
+python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+
+python labelImg.py ../ classes.txt
+
+
+
+Thanx @trinhthanhhoakg. It works perfectly. For my English speaking friends. It's like follows.
+
+You should have python3.
+
+clone git@github.com:tzutalin/labelImg.git -> pip3 install lebelImg -> Go to cloned project folder -> python labelImg.py
+If it works you are good to go.
+
+Else you will get error
+Traceback (most recent call last):
+File "labelImg.py", line 30, in
+from libs.resources import *
+ModuleNotFoundError: No module named 'libs.resources'
+
+Then execute "pyrcc5 -o libs/resources.py resources.qrc" OR "pyrcc5 -o libs/resources.py resources.qrc OR both."
+
+Again try "python labelImg.py"
+
