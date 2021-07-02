@@ -12,7 +12,7 @@ Thanx @trinhthanhhoakg. It works perfectly. For my English speaking friends. It'
 
 You should have python3.
 
-clone git@github.com:tzutalin/labelImg.git -> pip3 install lebelImg -> Go to cloned project folder -> python labelImg.py
+clone git@github.com:tzutalin/labelImg.git -> pip3 install labelImg -> Go to cloned project folder -> python labelImg.py
 If it works you are good to go.
 
 Else you will get error
