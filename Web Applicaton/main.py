@@ -12,6 +12,7 @@ import requests
 from flask import Flask, render_template, session, request, redirect, flash, Response, url_for
 from flask_sqlalchemy import SQLAlchemy
 # from flask_login import current_user
+
 ### Video imports ###
 from library.video_emotion_recognition import *
 
