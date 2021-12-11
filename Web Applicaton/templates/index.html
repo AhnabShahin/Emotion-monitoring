@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+   <meta charset="utf-8">
+   <link rel="stylesheet" type="text/css" href="/static/CSS/style.css">
+   <title>Interview Simulator</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+   <div class="landingPage">
+      <div class="container">
+
+         <nav class="navbar navbar-expand-lg navbar-dark ">
+            <div class="navbar-brand ">
+              Home
+            </div>
+            <div>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                     <li class="navItem">
+                        <a class="navLink" href="#">Dataset</a>
+                     </li>
+                     <li class="navItem">
+                        <a class="navLink" href="#">Documentation</a>
+                     </li>
+                     <li class="navItem">
+                        <a class="navLink" href="#">Case Studies</a>
+                     </li>
+                     <li class="navItem">
+                        <a class="navLink" href="#">Libary</a>
+                     </li>
+                     <li class="navItem">
+                        <a class="navLink" href="/team">Team</a>
+                     </li>
+
+                     {% if session['loggedIn'] %}
+                     {% if session['role']=="host" %}
+                     <li class="navItem active">
+                        <a class="navLink" href="/">{{session['user_name']}}</a>
+                     </li>
+                     <li class="navItem active">
+                        <a class="navLink" href="/logout">logout</a>
+                     </li>
+                     <li class="navItem active">
+                        <a class="navLink" href="/video_dash">Dashboard</a>
+                     </li>
+                     {% endif %}
+                     {% if session['role']=="audience" %}
+                     <li class="navItem active">
+                        <a class="navLink" href="#">{{session['user_name']}}</a>
+                     </li>
+                     <li class="navItem active">
+                        <a class="navLink" href="/logout">logout</a>
+                     </li>
+                     <form action="/video" class="column_home" method="post">
+                        <input type="submit" name="video" value="Get Emotion">
+                     </form>
+                     {% endif %}
+                     {% else %}
+                     <li class="navItem active my-2 my-lg-0 mx-lg-2">
+                        <a class="navLink" href="/login">login</a>
+                     </li>
+                     <li class="navItem active my-2 my-lg-0  mx-lg-2">
+                        <a class="navLink" href="/registration">registration</a>
+                     </li>
+
+                     {% endif %}
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </div>
+
+      <div class="container">
+
+
+
+         <div class="row">
+            <div class="col-md-6 bannerFirstCol">
+               <h1 class="bannerTitle">Emotion Monitoring BASED ON Facial Emotion Recognition using CNN</h1>
+               {% block body %}
+               <!--Video Interview button -->
+               {% if session['role']!="host" %}
+               <form action="/video" class="column_home" method="post">
+                  <input type="submit" name="video" value="Get Emotion">
+               </form>
+               {% endif %}
+               {# Fin du bloc "body" #}
+               {% endblock %}
+            </div>
+            <div class="col-md-6">
+               <img src="https://i.pinimg.com/originals/8c/f1/1d/8cf11d87712f08199ab8bfbaa30d3f4c.gif" width="100%">
+            </div>
+         </div>
+         <div>
+            <section class="aboutEmotion">
+               <h2>What is Emotion</h2>
+               <p>Emotions are believed to be a social and survival mechanism that is present in many species. In
+                  humans, emotions are understood as deep and complex psychological experiences that influence physical
+                  reactions. There is an entire sector of science devoted to understanding the sophisticated inner
+                  workings of the human brain, yet many questions related to human emotions remain unanswered. Even less
+                  scientific research is focused on understanding the emotional capacity of non-human primates and other
+                  animals. The ability to interpret the emotional states of an animal is considerably more difficult
+                  than understanding the emotional state of a human. The human face is capable of a wide array of
+                  expressions that communicate emotion and social intent to other humans. These expressions are so clear
+                  that even some non-human species, like dogs, can identify human emotion through facial expression.
+                  Each species has its own unique physiological composition resulting in special forms of expression.
+                  Despite human intellectual capacity, emotional understanding of other species through facial
+                  observation has proven difficult.</p>
+               <div class="row mt-5">
+                  <div class="col-md-4">
+                     <h2>Tensorflow</h2>
+                     <p>Tensorflow is superficial model for creating and positioning various Machine learning paradigms.
+                        Tensorflow is a domain that is generated and administrated by Google that has diversification in
+                        usage.</p>
+                  </div>
+                  <div class="col-md-4">
+                     <h2>Keras</h2>
+                     <p>Keras is an API that bestows a python interface which is used for high level neural networks. It
+                        is designated as top for deep learning algorithms and framework. It has strong multi GPU, CPU or
+                        TPU and distributed training support.</p>
+                  </div>
+                  <div class="col-md-4">
+                     <h2>Numpy</h2>
+                     <p>Numpy is the basic data structure used for data and modeling parameters. Input data are
+                        represented with numpy arrays which are convenient to operate and incorporate consistently with
+                        other python libraries.</p>
+                  </div>
+               </div>
+            </section>
+            <section>
+               <div class="row">
+                  <div class="col-md-6 bannerFirstCol">
+                     <h1 class="bannerTitle">The Future is Now and You Just Need To Realize It. Step into Future Today &
+                        Make it Happen.</h1>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="row">
+                        <div class="col-md-6">
+
+                           <div>
+                              <div class="col-md-6">
+
+                                 <div>
+                                 </div>
+                              </div>
+                           </div>
+            </section>
+         </div>
+      </div>
+   </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+   integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+   integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/CSS/style.css">
+    <title>Interview Simulator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+
+  <body>
+ <section class="VideoStartSection ">
+    <div >
+      <img src = "/static/CSS/images/videoHead.png" width="100%">
+    </div>
+
+ {% block body %}
+<div class="container">
+     <p class="text-center mt-3 guideMessage">Time duration of this detection period will be the input amount in above box in sec. And to see the result in dashboard go to video_dash page.</p>
+</div>
+<br>
+<form action="/video_1" class="form-group d-flex flex-column align-items-center" method="post">
+    <input type="number" class="form-control col-md-2 " name="time" value=45>
+    </br>
+    <input type="submit"  name="video_1" value="Start Recording">
+</form>
+
+<br>
+{% endblock %}
+
+
+<br>
+<form class="d-flex flex-column align-items-center" >
+    <input type="button" value="Back" onclick="history.go(-1)">
+  </form>
+  </section>
+  </body>
+</html>
+
+<script>
+</script>
