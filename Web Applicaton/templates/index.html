@@ -91,7 +91,7 @@
                <h1 class="bannerTitle">Emotion Monitoring BASED ON Facial Emotion Recognition using CNN</h1>
                {% block body %}
                <!--Video Interview button -->
-               {% if session['role']!="host" %}
+               {% if session['role']=="audience" %}
                <form action="/video" class="column_home" method="post">
                   <input type="submit" name="video" value="Get Emotion">
                </form>
