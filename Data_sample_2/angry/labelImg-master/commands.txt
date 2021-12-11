@@ -25,6 +25,10 @@ Then execute "pyrcc5 -o libs/resources.py resources.qrc" OR "pyrcc5 -o libs/reso
 
 Again try "python labelImg.py"
 
+____________________
+
+"pyrcc5 -o libs/resources.py resources.qrc"
+
 "python labelImg.py C:\GitHub\Emotion-monitoring\Data_sample_2\angry C:\GitHub\Emotion-monitoring\Data_sample_2\angry\classes.txt"
 
 "first cd to lebellimg-master, then direc: folder,then classes on the direc: folder"
