@@ -21,4 +21,6 @@ keras
 wordcloud
 numpy
 pandas
-
+flask_sqlalchemy
+SQLAlchemy
+PyMySQL
